@@ -951,7 +951,6 @@ class CommonCoreMetadataFormPlugin(p.SingletonPlugin, p.toolkit.DefaultDatasetFo
     # Method below allows functions and other methods to be called from the Jinja template using the h variable
     # always_private hides Visibility selector, essentially meaning that all datasets are private to an organization
     def get_helpers(self):
-        log.debug('get_helpers() called')
         return {
             'public_access_levels': access_levels,
             'required_metadata': required_metadata,
