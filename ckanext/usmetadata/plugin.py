@@ -871,12 +871,15 @@ class CommonCoreMetadataFormPlugin(p.SingletonPlugin, p.toolkit.DefaultDatasetFo
 
     # See ckan.plugins.interfaces.IDatasetForm
     def _create_package_schema(self, schema):
-        if request.path == u'/api/action/package_create':
-            for update in schema_api_for_create:
-                schema.update(update)
-        else:
-            for update in schema_updates_for_create:
-                schema.update(update)
+        updates = schema_updates_for_create
+        try:
+            if request.path == u'/api/action/package_create':
+                updates = schema_api_for_create
+        except:
+            pass
+
+        for update in updates:
+            schema.update(update)
 
         # use convert_to_tags functions for taxonomy
         schema.update({
