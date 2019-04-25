@@ -146,6 +146,7 @@ expanded_metadata = (
     {'id': 'accrual_periodicity', 'validators': [v.Regex(
         r'^([Dd]ecennial)|([Qq]uadrennial)|([Aa]nnual)|([Bb]imonthly)|([Ss]emiweekly)|([Dd]aily)|([Bb]iweekly)'
         r'|([Ss]emiannual)|([Bb]iennial)|([Tt]riennial)|([Tt]hree times a week)|([Tt]hree times a month)'
+        r'|([Ee]very five years)|([Ee]very eight years)'
         r'|([Cc]ontinuously updated)|([Mm]onthly)|([Qq]uarterly)|([Ss]emimonthly)|([Tt]hree times a year)'
         r'|([Ww]eekly)|([Hh]ourly)|([Cc]ompletely irregular)|([Ii]rregular)|(\[\[REDACTED).*?(\]\])$')]},
     {'id': 'language', 'validators': [v.Regex(
@@ -274,8 +275,10 @@ required_if_applicable_metadata_by_pass_validation = (
 )
 
 accrual_periodicity = [u"Decennial", u"Quadrennial", u"Annual", u"Bimonthly", u"Semiweekly", u"Daily", u"Biweekly",
-                       u"Semiannual", u"Biennial", u"Triennial",
-                       u"Three times a week", u"Three times a month", u"Continuously updated", u"Monthly", u"Quarterly",
+                       u"Semiannual", u"Biennial", u"Triennial", 
+                       u"Three times a week", u"Three times a month", 
+                       u"Every five years", u"Every eight years",
+                       u"Continuously updated", u"Monthly", u"Quarterly",
                        u"Semimonthly", u"Three times a year", u"Weekly", u"Hourly", u"Irregular"]
 
 access_levels = ['public', 'restricted public', 'non-public']
